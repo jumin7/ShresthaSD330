@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .floatCenter {
+                width:600px; 
+                height: 750px;
+                margin: 0px auto; 
+                background-color: rgb(164, 225, 234);
+                border-style: solid;
+        }
+
+        #fridge {
+            display: none;
+            height: 200px;
+        }
+        #google {
+            display: none;
+            width: 300px;
+        }
+        #tv {
+            display: none;
+            width: 300px;
+        }
+        #celsius {
+            display: none;
+        }
+    </style>
+    <title>fridgeapp</title>
+</head>
+<body>
+    <b>This is Jumin's Fridge </b>
+    <div id="main" class="floatCenter">
+        <h1 style="text-align: center;">Main Fridge</h1>
+        <hr>
+       <p>
+        <h3>Temperature of the fridge: <div id="faren">40° F</div> <div id="celsius"> 1° C</div></h3>
+        <i> Displaying fridge status as of: </i><div id ="p1"></div></p>
+
+       <img id="fridge" src="https://aptokash.github.io/SD330/06-fridge.jpg" alt="fridge image" /> 
+       <img id="google" src="https://aptokash.github.io/SD330/06-web.jpg" alt="google image" />
+       <img id="tv" src="https://aptokash.github.io/SD330/06-tv.jpg" alt="tv" />
+
+
+
+        <div id ="buttons" class="fullWidth">
+            <input type=button onclick="button1()" id ="button1" value ="Open Fridge">
+            </button>
+            <input type=button onclick="button2()" id ="button2" value ="Watch TV">
+            </button>
+            <input type=button onclick="button3()" id ="button3" value ="Google Recipes">
+            </button>
+            <input type=button onclick="button4()" id ="button4" value ="Celsius">
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        (c) J. Shrestha - 03/10/2023
+    </footer>
+
+</body>
+<script>
+    function button1(){
+        but1 = document.getElementById("button1")
+        if (but1.value == "Open Fridge") {
+            but1.value = "Close Fridge";
+            turnOn();
+        } else {
+            but1.value ="Open Fridge";
+            turnOff();
+        }
+    }
+
+    function button2(){
+        document.getElementById('tv').style.display = "block";
+       
+    }
+
+    function button3(){
+        document.getElementById('google').style.display = "block";
+       
+    }
+
+    function button4(){
+        but4 = document.getElementById("button4")
+        if (but4.value == "Celsius") {
+            but4.value = "Farenheit";
+            document.getElementById('celsius').style.display = "block";
+            document.getElementById('faren').style.display = "none";
+            
+        } else {
+            but4.value ="Celsius";
+            document.getElementById('celsius').style.display = "none";
+            document.getElementById('faren').style.display = "block";
+        }
+        
+       
+    }
+
+    function turnOn(){
+        document.getElementById ('button1').style.backgroundColor="green";
+        document.getElementById('fridge').style.display = "block";
+    }
+
+    function turnOff(){
+        document.getElementById ('button1').style.backgroundColor="red";
+        document.getElementById('fridge').style.display = "none";
+
+    }
+
+    var date = new Date();
+	var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+	var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+	var date_time = current_date+" "+current_time;	
+	document.getElementById("p1").innerHTML = date_time;
+
+  
+
+
+</script>
+</html>

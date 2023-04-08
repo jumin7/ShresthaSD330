@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <style>
         .floatCenter {
-                width:600px; 
-                height: 750px;
+                width:800px; 
+                height: 400px;
                 margin: 0px auto; 
                 background-color: rgb(164, 225, 234);
                 border-style: solid;
@@ -32,15 +32,13 @@
 <body>
     <b>This is Jumin's Fridge </b>
     <div id="main" class="floatCenter">
-        <h1 style="text-align: center;">Main Fridge</h1>
-        <hr>
-       <p>
         <h3>Temperature of the fridge: <div id="faren">40° F</div> <div id="celsius"> 1° C</div></h3>
         <i> Displaying fridge status as of: </i><div id ="p1"></div></p>
 
-       <img id="fridge" src="https://aptokash.github.io/SD330/06-fridge.jpg" alt="fridge image" /> 
+       <img id="fridge" src="/Users/jashminshrestha/Documents/GitHub/ShresthaSD330/FridgeApp/fridge.jpeg" alt="fridge image" /> 
+       <img id="tv" src="/Users/jashminshrestha/Documents/GitHub/ShresthaSD330/FridgeApp/picture.jpeg" alt="tv" />
        <img id="google" src="https://aptokash.github.io/SD330/06-web.jpg" alt="google image" />
-       <img id="tv" src="https://aptokash.github.io/SD330/06-tv.jpg" alt="tv" />
+
 
 
 
@@ -53,7 +51,14 @@
             </button>
             <input type=button onclick="button4()" id ="button4" value ="Celsius">
             </button>
+            <input type=button onclick="button5()" id ="button5" value ="Military Time">
+            </button>
         </div>
+
+        <audio id="myAudio">
+            <source src="FridgeApp/Audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
     <footer>
@@ -75,7 +80,18 @@
     }
 
     function button2(){
-        document.getElementById('tv').style.display = "block";
+         but2 = document.getElementById("button2")
+        if (but2.value == "Watch TV") {
+            document.getElementById('tv').style.display = "block";
+            but2.value = "Stop TV";
+            play();
+
+        } else {
+            but2.value ="Watch TV";
+            pause();
+            document.getElementById('tv').style.display = "none";
+
+        }
        
     }
 
@@ -96,9 +112,20 @@
             document.getElementById('celsius').style.display = "none";
             document.getElementById('faren').style.display = "block";
         }
-        
-       
     }
+
+    function button5(){
+        but1 = document.getElementById("button5")
+        if (but1.value == "Military Time") {
+            but1.value = "Standard Time";
+            document.getElementById("p1").innerHTML = military_time;
+        } else {
+            but1.value ="Military Time";
+            document.getElementById("p1").innerHTML = standard_time;
+
+        }
+    }  
+    
 
     function turnOn(){
         document.getElementById ('button1').style.backgroundColor="green";
@@ -110,12 +137,20 @@
         document.getElementById('fridge').style.display = "none";
 
     }
+    var x = document.getElementById("myAudio"); 
+
+    function pause() { 
+        x.pause(); 
+    } 
+    function play(){
+        x.play(); 
+    }
 
     var date = new Date();
-	var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-	var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
-	var date_time = current_date+" "+current_time;	
-	document.getElementById("p1").innerHTML = date_time;
+	var military_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+    var hours = date.getHours() % 12 || 12;
+    var standard_time = hours + ":"+date.getMinutes()+":"+ date.getSeconds();
+	document.getElementById("p1").innerHTML = standard_time;
 
   
 

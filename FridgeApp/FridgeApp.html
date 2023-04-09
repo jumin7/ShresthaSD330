@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+       
         .floatCenter {
-                width:800px; 
-                height: 400px;
-                margin: 0px auto; 
-                background-color: rgb(164, 225, 234);
-                border-style: solid;
+            width:1000px; 
+            height: 600px;
+            margin: 0px auto; 
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            border-style: solid;
         }
 
         #fridge {
@@ -17,57 +28,111 @@
         }
         #google {
             display: none;
-            width: 300px;
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        #weather {
+            width: 150px;
+            float: right;
+            margin-right: 70px;
+            margin-top: 30px;
         }
         #tv {
             display: none;
             width: 300px;
+            
         }
-        #celsius {
+        #music {
             display: none;
+            width: 200px;
         }
+       
+        .buttons {
+            text-align: center;
+            justify-content: center;
+            margin-top: 0%;padding-top: 0%;
+        }
+        .list {
+            width: 30%;
+            height: auto;
+            margin-right: 1%;
+            float: right;
+            background: rgb(83,216,218);
+            background: linear-gradient(0deg, rgba(83,216,218,1) 0%, rgba(255,214,125,1) 100%);
+            border-style: solid;
+            padding-left:10px;;
+    }
     </style>
     <title>fridgeapp</title>
 </head>
 <body>
     <b>This is Jumin's Fridge </b>
     <div id="main" class="floatCenter">
-        <h3>Temperature of the fridge: <div id="faren">40° F</div> <div id="celsius"> 1° C</div></h3>
-        <i> Displaying fridge status as of: </i><div id ="p1"></div></p>
-
-       <img id="fridge" src=fridge.jpeg" alt="fridge image" /> 
-       <img id="tv" src="/Users/jashminshrestha/Documents/GitHub/ShresthaSD330/FridgeApp/picture.jpeg" alt="tv" />
-       <img id="google" src="https://aptokash.github.io/SD330/06-web.jpg" alt="google image" />
-
-
-
-
-        <div id ="buttons" class="fullWidth">
+        <h3 style="padding: 0%; margin-bottom: 0%; color: rgb(28, 25, 221);"><i>Panasonic </i></h3>
+        <br>
+        <div id ="buttons" class="buttons">
             <input type=button onclick="button1()" id ="button1" value ="Open Fridge">
             </button>
             <input type=button onclick="button2()" id ="button2" value ="Watch TV">
             </button>
             <input type=button onclick="button3()" id ="button3" value ="Google Recipes">
             </button>
-            <input type=button onclick="button4()" id ="button4" value ="Celsius">
+            <input type=button onclick="button4()" id ="button4" value ="Play Nepali Tunes">
             </button>
             <input type=button onclick="button5()" id ="button5" value ="Military Time">
             </button>
         </div>
 
+        <img id="weather" src="Media/weatherImage.png" alt="today's weather" /> 
+
+        <h3>Temperature of the fridge:<p id="temp">40°F</p>
+            <button onclick="increaseTemp()">Increase Temperature</button>
+            <button onclick="decreaseTemp()">Decrease Temperature</button>
+            <button onclick="changeUnits()">Change Units</button>
+
+
+       <br> <br><i> Displaying fridge status as of: </i><div id ="p1"></div></p>
+        <div class="list">
+            <h3>Shopping List</h3>
+            <ul>
+                <li>Eggs</li>
+                <li>Milk</li>
+                <li>Bread</li>
+            </ul>
+                <input type="text" name="item" id="newItem" placeholder="Add to List">
+                <button type="submit" onclick="takeIn()">Submit</button> 
+        </div>
+
+        <button onclick="startTimer()">Start Timer</button>
+        <p>Time left: <span id="countdown"></span></p>
+
+       <img id="fridge" src="Media/fridge.jpeg" alt="fridge image" class="column"/> 
+       <img id="tv" src="Media/picture.jpeg" alt="tv" class="column"/>
+       <img id="google" src="Media/google.webp" alt="google image" class="column" />
+       <img id="music" src="Media/music image.jpeg" alt="album cover"/>
+       <br>
         <audio id="myAudio">
-            <source src="Audio.mp3" type="audio/mpeg">
+            <source src="Media/Audio.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        <audio id="alert-sound" src="Media/microwave-timer-117077.mp3"></audio>
+        <audio id="myMusic">
+            <source src="Media/MangalDhoon.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+ 
+
     </div>
 
     <footer>
         <hr>
-        (c) J. Shrestha - 03/10/2023
+        (c) J. Shrestha - 04/8/2023
     </footer>
 
 </body>
 <script>
+// FOR OPENING FRIDGE       
     function button1(){
         but1 = document.getElementById("button1")
         if (but1.value == "Open Fridge") {
@@ -79,6 +144,7 @@
         }
     }
 
+// FOR TV
     function button2(){
          but2 = document.getElementById("button2")
         if (but2.value == "Watch TV") {
@@ -95,25 +161,96 @@
        
     }
 
+// GOOGLE
     function button3(){
-        document.getElementById('google').style.display = "block";
+        
+        but3 = document.getElementById("button3")
+        if (but3.value == "Google Recipes") {
+            but3.value = "Close";
+            document.getElementById('google').style.display = "block";
+        } else {
+            but3.value ="Google Recipes";
+            document.getElementById('google').style.display = "none";
+        }
+    
+    }
+
+// PLAY MUSIC
+    function button4(){
+         but4 = document.getElementById("button4")
+        if (but4.value == "Play Nepali Tunes") {
+            document.getElementById('music').style.display = "block";
+            document.getElementById('google').style.display = "none"; // Turn off google so that it is not overcorwded
+            pause();
+            document.getElementById('tv').style.display = "none";
+            but2.value ="Watch TV";
+            but4.value = "Pause";
+            playMusic();
+
+        } else {
+            but4.value ="Play Nepali Tunes";
+            pauseMusic();
+            document.getElementById('music').style.display = "none";
+
+        }
        
     }
 
-    function button4(){
-        but4 = document.getElementById("button4")
-        if (but4.value == "Celsius") {
-            but4.value = "Farenheit";
-            document.getElementById('celsius').style.display = "block";
-            document.getElementById('faren').style.display = "none";
-            
-        } else {
-            but4.value ="Celsius";
-            document.getElementById('celsius').style.display = "none";
-            document.getElementById('faren').style.display = "block";
-        }
-    }
+//TEMPERATURE CHANGE
+        var temp = 40; // Starting temperature in F
+		var maxTemp = 50; // Max temp limit in F
+		var minTemp = 30; // Min temp limit in F
+		var isFahrenheit = true; // Temperature unit set
 
+		function increaseTemp() {
+			// Check if the temperature has reached the maximum limit
+			if (temp < maxTemp) {
+				// Increase temperature by 1 degree F
+				temp++;
+
+				// Update display
+				updateTempDisplay();
+			} else {
+				alert("Maximum temperature limit reached!");
+			}
+		}
+
+		function decreaseTemp() {
+			// Checking if min temp reachhed
+			if (temp > minTemp) {
+				// Decrease temperature by 1 degree F
+				temp--;
+
+				// Update display
+				updateTempDisplay();
+			} else {
+				alert("Minimum temperature limit reached!");
+			}
+		}
+
+		function changeUnits() {
+			// Switch Unit
+			isFahrenheit = !isFahrenheit;
+
+			// Update display
+			updateTempDisplay();
+		}
+
+		function updateTempDisplay() {
+			// Convert temperature to Celsius 
+			var tempValue = temp;
+			var tempUnit = "°F";
+
+			if (!isFahrenheit) {
+				tempValue = (temp - 32) * 5 / 9;
+				tempUnit = "°C";
+			}
+
+			// Update display
+			document.getElementById("temp").innerHTML = tempValue.toFixed(1) + tempUnit;
+		}
+
+// TIME CHANGE
     function button5(){
         but1 = document.getElementById("button5")
         if (but1.value == "Military Time") {
@@ -126,19 +263,19 @@
         }
     }  
     
-
+// FOR FRIDGE
     function turnOn(){
-        document.getElementById ('button1').style.backgroundColor="green";
+        document.getElementById ('button1').style.backgroundColor="red";
         document.getElementById('fridge').style.display = "block";
     }
-
     function turnOff(){
-        document.getElementById ('button1').style.backgroundColor="red";
+        document.getElementById ('button1').style.backgroundColor="green";
         document.getElementById('fridge').style.display = "none";
-
+        but1.value ="Open Fridge";
     }
-    var x = document.getElementById("myAudio"); 
 
+// FOR AUDIO    
+    var x = document.getElementById("myAudio"); 
     function pause() { 
         x.pause(); 
     } 
@@ -146,12 +283,56 @@
         x.play(); 
     }
 
+    var y = document.getElementById("myMusic"); 
+    function pauseMusic() { 
+        y.pause(); 
+    } 
+    function playMusic(){
+        y.play(); 
+    }
+
+//FOR LIST
+    function takeIn(){
+        var input = document.getElementById("newItem");
+        var node = document.createElement('li');
+        node.appendChild(document.createTextNode(input.value));
+        document.querySelector('ul').appendChild(node);
+    }
+
+// FOR COUNTDOWN
+    function startTimer() {
+        var timeLeft = 60; // Set 60 seconds countdown
+        var countdownElement = document.getElementById("countdown");
+        var alertSound = document.getElementById("alert-sound");
+
+        var countdownInterval = setInterval(function() {
+          var minutes = (timeLeft / 60) | 0;
+          var seconds = timeLeft % 60;
+          countdownElement.innerText = minutes + "m " + seconds + "s";
+
+          if (timeLeft <= 0) {
+            clearInterval(countdownInterval);
+            countdownElement.innerText = "Expired";
+            alertSound.play();
+          } else {
+            timeLeft--;
+          }
+        }, 1000); // Update every second
+      }
+
+// FOR TIME
     var date = new Date();
 	var military_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
     var hours = date.getHours() % 12 || 12;
     var standard_time = hours + ":"+date.getMinutes()+":"+ date.getSeconds();
 	document.getElementById("p1").innerHTML = standard_time;
 
+    function inc(i){
+        i++;
+        document.getElementById('inc').value = i;
+    }
+
+   
   
 
 

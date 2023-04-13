@@ -4,16 +4,20 @@
     <title>Jumin's Index</title>
     <style>
         #text {
-            float: center; 
+            float: center;
             border-style: solid;
             padding: 3%;
             background-color: rgba(246, 37, 51, 0.856);
+            margin: 30px;
+            font-size: large;
+        }
 
-        }
         h1 {
-            color: rgb(255, 244, 173);
+            color: rgb(255, 255, 149);
             text-align: center;
+            background-color:rgb(8, 100, 123);
         }
+
         body {
             background-image: url('nepal.jpeg');
             background-repeat: no-repeat;
@@ -21,15 +25,15 @@
             background-size: cover;
             background-size: 100% 100%;
         }
+
         #pic {
             float: left;
             padding-top:0%;
             padding-left: 2%;
             width:100px;
+            margin: 20px;
 
         }
-   
-
 
     </style>
 </head>
@@ -69,11 +73,11 @@ function fileList(){
 				var fname = file.name;           
 				var fpath = "https://jumin7.github.io/SD330/" + fname;  
 				
-                htmlString += "<p><a href='" +fpath+ "'>" + fname + "</a></p>";
+                htmlString += "<p><a href='" + fpath+ "'>" + fname + "</a></p>";
 			}
         
 			htmlString += '</ul></div>';
-			document.getElementById('files').innerHTML = htmlString;
+			document.getElementById("files").innerHTML = htmlString;
 		})()
 	}	
     

@@ -179,13 +179,14 @@
     function button4(){
          but4 = document.getElementById("button4")
         if (but4.value == "Play Nepali Tunes") {
+            playMusic();
             document.getElementById('music').style.display = "block";
             document.getElementById('google').style.display = "none"; // Turn off google so that it is not overcorwded
             pause();
             document.getElementById('tv').style.display = "none";
             but2.value ="Watch TV";
             but4.value = "Pause";
-            playMusic();
+            
 
         } else {
             but4.value ="Play Nepali Tunes";

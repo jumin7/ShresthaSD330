@@ -1,0 +1,48 @@
+* {
+    background-color: blanchedalmond;
+}
+h2{
+    color: rgb(215, 64, 26);
+}
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.form {
+    text-align: center;
+    padding: 50px;
+} 
+
+#main{
+    border: solid;
+    width: 80%;
+    margin: 0px auto; 
+}
+
+.account {
+    text-align: right;
+    padding: 2%;
+}
+
+#userButton {
+    color: rgb(67, 177, 4);
+    
+}

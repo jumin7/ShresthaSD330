@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Interaction Design",
+        "author": "Sharp, Rogers, Preece",
+        "isbn": 123456,
+        "courseID" : "CMPT330L"
+    },
+    {
+        "title": "Discrete Mathematics for All",
+        "author": "Andy Sparks",
+        "isbn": 654321,
+        "courseID" : "MATH205L"
+
+    },
+    {
+        "title": "Everything about Networking",
+        "author": "Cisco",
+        "isbn": 45678,
+        "courseID" : "CMPT307L"
+    },
+    {
+        "title": "Everything about Networking",
+        "author": "Cisco",
+        "isbn": 45678,
+        "courseID" : "CMPT307L"
+    }  
+]

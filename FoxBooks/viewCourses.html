@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+        #pic {
+            padding: 0%;
+            margin: 0px auto;  
+            display: block;
+            width: 150px;
+        }
+        #banner {
+            background-color: rgb(215, 231, 250);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="banner">
+        <img src="logo.png" alt="Fox Logo" id="pic"></a>
+        <hr>
+    </div>
+    <h2>Here are the list of Courses:</h2> 
+    
+    
+</body>
+<div id="myData"></div>
+<script>
+    books();
+    function books(){
+        fetch('courses.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (const element of data) {
+                var div = document.createElement("div");
+                div.innerHTML = '<ul><li><b> Name: </b>' + element.name + '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Code: </b>' + element.code +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp Semester: </b>' + element.semester +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp Professor: </b>' + element.professor + '</li>';
+                mainContainer.appendChild(div);
+            }
+        }
+
+    }
+    
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "SystemDesign",
+        "code": "CMPT330L",
+        "semester": "Spring",
+        "professor": "Andrew Tokash"
+    },
+    {
+        "name": "Internetworking",
+        "code": "CMPT307L",
+        "semester": "Spring",
+        "professor": "Robert Cannistra"
+    },
+    {
+        "name": "DiscreteMath",
+        "code": "MATH205L",
+        "semester": "Fall + Spring",
+        "professor": "Joseph Kirtland"
+    }  
+]

@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
+    <link href="stylesheet.css" rel="stylesheet">
     <style>
-        #pic {
-            padding: 0%;
-            margin: 0px auto;  
-            display: block;
-            width: 150px;
-        }
-        #banner {
-            background-color: rgb(215, 231, 250);
-        }
+
+   
     </style>
 </head>
-<body>
+<header>
 
-    <div id="banner">
-        <img src="logo.png" alt="Fox Logo" id="pic"></a>
-        <hr>
-    </div>
-    <h2>Here are the list of Courses:</h2> 
+    <nav class="navigation">
+        <h1><img src="logo.png" alt="Logo" id="pic"></h1>
+        <div id="buttonList">
+        </div>
+        
+        <ul>
+            <li><a href="foxbookHompage.html">Home</a></li>
+            <li><a href="viewCourses.html">View courses</a></li>
+            <li><a href="viewBooks.html">View Books</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+<body>
+  
+    <nav class="crumbs">
+        <ol>
+            <li class="crumb"><a href="foxbookHompage.html">HomePage</a></li>
+            <li class="crumb">View Books</li>
+        </ol>
+    </nav>
+
+
+    <h2>Here are the list of Books:</h2> 
     
     
 </body>
-<div id="myData"></div>
+<div id="myData" class = "other">
+
+</div>
+
+
 <script>
     books();
     function books(){

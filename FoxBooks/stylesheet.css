@@ -1,0 +1,114 @@
+
+h2{
+    color: rgb(215, 64, 26);
+}
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol  {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 50%;
+
+}
+
+.crumb  {
+    display: inline-block;
+    font-size: x-small;
+
+
+}
+
+.crumb a::after {
+    display: inline-block;
+    font-size: x-small;
+    color: #000;
+    content: '>';
+    padding: 0 3px;
+    
+}
+
+.crumb a {
+    font-size: x-small;
+
+}
+
+.form {
+    text-align: center;
+    padding: 50px;
+} 
+#pic {
+    padding: 0%;
+    margin: 0px auto;  
+    display: block;
+    width: 150px;
+}
+#banner {
+    background-color: rgb(203, 221, 242);
+}
+.button {
+    background-color: #e73a3a; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        display: inline-block;
+        font-size: 16px;
+}
+#buttonList{
+    text-align: center;
+   }
+
+
+   .navigation {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(203, 221, 242);
+   
+    
+}
+
+.logo{
+    width:200px;
+    height:80px;
+    text-align: left;
+    left:10px;
+    top:10px;
+    margin: 0px 15px 15px 0px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 30px;
+    font-weight: bold; font-size: 100px;
+}
+
+.naviagtion ul, li, a{
+    color:rgb(26, 42, 218);
+    text-decoration: none;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    transition: ease-in-out .4s;
+
+}
+
+h1{
+    text-transform: uppercase;
+    color:white;
+
+}
+
+.navigation ul, li, a:hover {
+    color:rgb(164, 184, 234);
+} 
+
+.other ul, li {
+    color: #281111;
+    font-size: 15px;
+
+}

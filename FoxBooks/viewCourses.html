@@ -2,30 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
-    <style>
-        #pic {
-            padding: 0%;
-            margin: 0px auto;  
-            display: block;
-            width: 150px;
-        }
-        #banner {
-            background-color: rgb(215, 231, 250);
-        }
-    </style>
+    <title>CourseList</title>
+    <link href="stylesheet.css" rel="stylesheet">
 </head>
+<header>
+
+    <nav class="navigation">
+        <h1><img src="logo.png" alt="Logo" id="pic"></h1>
+        <div id="buttonList">
+        </div>
+
+        <ul>
+            <li><a href="foxbookHompage.html">Home</a></li>
+            <li><a href="viewCourses.html">View courses</a></li>
+            <li><a href="viewBooks.html">View Books</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
 <body>
 
-    <div id="banner">
-        <img src="logo.png" alt="Fox Logo" id="pic"></a>
-        <hr>
-    </div>
+
+    <nav class="crumbs">
+        <ol>
+            <li class="crumb"><a href="foxbookHompage.html">HomePage</a></li>
+            <li class="crumb">View Courses</li>
+        </ol>
+    </nav>
     <h2>Here are the list of Courses:</h2> 
     
     
 </body>
-<div id="myData"></div>
+<div id="myData" class ="other"></div>
+
 <script>
     books();
     function books(){
@@ -44,7 +54,10 @@
             var mainContainer = document.getElementById("myData");
             for (const element of data) {
                 var div = document.createElement("div");
-                div.innerHTML = '<ul><li><b> Name: </b>' + element.name + '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Code: </b>' + element.code +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp Semester: </b>' + element.semester +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp Professor: </b>' + element.professor + '</li>';
+                div.innerHTML = '<ul><li><b> Name: </b>' + element.name + 
+                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Code: </b>' + element.code +
+                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Semester: </b>' + element.semester +
+                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Professor: </b>' + element.professor + '</li>';
                 mainContainer.appendChild(div);
             }
         }

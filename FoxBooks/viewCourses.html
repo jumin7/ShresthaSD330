@@ -36,6 +36,11 @@
 </body>
 <div id="myData" class ="other"></div>
 
+<footer>
+    <hr>
+    (c) J. Shrestha - 05/09/2023
+</footer>
+
 <script>
     books();
     function books(){
@@ -55,9 +60,9 @@
             for (const element of data) {
                 var div = document.createElement("div");
                 div.innerHTML = '<ul><li><b> Name: </b>' + element.name + 
-                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Code: </b>' + element.code +
-                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Semester: </b>' + element.semester +
-                    '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Professor: </b>' + element.professor + '</li>';
+                    '<b><br> Code: </b>' +'<i>'+ element.code + '</i>'+
+                    '<b><br> Semester: </b>' + element.semester +
+                    '<b><br> Professor: </b>' + element.professor + '</li>';
                 mainContainer.appendChild(div);
             }
         }

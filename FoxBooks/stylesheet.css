@@ -1,4 +1,6 @@
-
+body {
+    background-color:azure;
+}
 h2{
     color: rgb(215, 64, 26);
 }

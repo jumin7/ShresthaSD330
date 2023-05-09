@@ -20,7 +20,6 @@
             <li><a href="foxbookHompage.html">Home</a></li>
             <li><a href="viewCourses.html">View courses</a></li>
             <li><a href="viewBooks.html">View Books</a></li>
-            <li><a href="#">Contact</a></li>
 
         </ul>
     </nav>
@@ -42,6 +41,14 @@
 <div id="myData" class = "other">
 
 </div>
+<div class="Order">
+    <button onclick="window.location.href = 'userAccount.html';" id="userButton">Order Book</button>
+</div>
+
+<footer>
+    <hr>
+    (c) J. Shrestha - 05/09/2023
+</footer>
 
 
 <script>
@@ -62,7 +69,7 @@
             var mainContainer = document.getElementById("myData");
             for (const element of data) {
                 var div = document.createElement("div");
-                div.innerHTML = '<ul><li><b> Book Title: </b>' + element.title + '<b>&nbsp&nbsp&nbsp&nbsp&nbsp Author: </b>' + element.author +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp ISBN: </b>' + element.isbn +'<b>&nbsp&nbsp&nbsp&nbsp&nbsp Course Used In: </b>' + element.courseID + '</li>';
+                div.innerHTML = '<ul><li><b> Book Title: </b>' + element.title + '<b><br> Author: </b>' + element.author +'<b><br> ISBN: </b>' + element.isbn +'<b><br> Course Used In: </b>' +'<i>'+ element.courseID +'</i>'+ '<b><br> Stock: </b>' + element.Stock + '</li>';
                 mainContainer.appendChild(div);
             }
         }

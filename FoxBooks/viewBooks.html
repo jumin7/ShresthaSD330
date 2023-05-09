@@ -85,7 +85,7 @@ p {
             var mainContainer = document.getElementById("myData");
             for (const element of data) {
                 var div = document.createElement("div");
-                div.innerHTML = '<ul><li><b> Book Title: </b>' + element.title + '<b><br> Author: </b>' + element.author +'<b><br> ISBN: </b>' + element.isbn +'<b><br> Course Used In: </b>' +'<i>'+ element.courseID +'</i>'+ '<b><br> Stock: </b>' + element.Stock + '</li>';
+                div.innerHTML = '<ul><li><b> Book Title: </b>' + element.title + '<b><br> Author: </b>' + element.author +'<b><br> ISBN: </b>' + element.isbn +'<b><br> Course Used In: </b>' +'<i>'+ element.courseID +'</i>'+ '<b><br> Stock: </b>' + element.Stock + '</li><br>';
                 mainContainer.appendChild(div);
             }
         }

@@ -1,34 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
     <link href="stylesheet.css" rel="stylesheet">
-    <style>
 
-   
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+#bg {
+    padding: 0%;
+    margin: 0px auto;  
+    display: block;
+    width: 400px;
+        }
+
+p {
+    border: solid;
+    border-style: dotted;
+    padding: 15px;
+    margin: 0px auto;  
+    display: block;
+    width: 500px;
+}
+
+
+</style>
 </head>
-<header>
+<body>
+<div class="main">
+<div class="sidenav">
+    <a href="homepage.html">Home</a>
+    <a href="viewCourses.html">View courses</a>
+    <a href="viewBooks.html">View Books</a>
+              <h1><a href="homepage.html"><img src="logo.png" alt="Logo" id="pic"></a></h1>
 
-    <nav class="navigation">
-        <h1><img src="logo.png" alt="Logo" id="pic"></h1>
-        <div id="buttonList">
-        </div>
-        
-        <ul>
-            <li><a href="foxbookHompage.html">Home</a></li>
-            <li><a href="viewCourses.html">View courses</a></li>
-            <li><a href="viewBooks.html">View Books</a></li>
-
-        </ul>
-    </nav>
-</header>
+</div>
 <body>
   
     <nav class="crumbs">
         <ol>
-            <li class="crumb"><a href="foxbookHompage.html">HomePage</a></li>
+            <li class="crumb"><a href="homepage.html">HomePage</a></li>
             <li class="crumb">View Books</li>
         </ol>
     </nav>
@@ -42,15 +54,15 @@
 
 </div>
 <div class="Order">
-    <button onclick="window.location.href = 'userAccount.html';" id="userButton">Order Book</button>
+    <button onclick="window.location.href = 'orderBook.html';" id="userButton">Order Book</button>
 </div>
 
-<footer>
+<footer  style="font-size: x-small;">
     <hr>
     (c) J. Shrestha - 05/09/2023
 </footer>
 
-
+</div>
 <script>
     books();
     function books(){

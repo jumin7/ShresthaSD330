@@ -1,75 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
     <link href="stylesheet.css" rel="stylesheet">
-    <style>
-        .floatCenter {
-                width:300px; 
-                height: 200px;
-                margin: 0px auto; 
-                background: linear-gradient(to right,rgb(248, 248, 215),rgb(250, 250, 87));
 
-                border-style: solid;
-                padding: 2%;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#bg {
+    padding: 0%;
+    margin: 0px auto;  
+    display: block;
+    width: 400px;
         }
-   
-    </style>
+
+p {
+    padding: 15px;
+    margin: 0px auto;  
+    display: block;
+    width: 500px;
+}
+.floatCenter {
+        width:300px; 
+        height: 200px;
+        margin: 0px auto; 
+        background: linear-gradient(to right,rgb(253, 253, 253), rgb(203, 221, 242));
+        border-style: dashed;
+        padding: 2%;
+}
+
+#form {
+    font-size: medium;
+}
+
+
+</style>
 </head>
-<header>
-
-    <nav class="navigation">
-        <h1><img src="logo.png" alt="Logo" id="pic"></h1>
-        <div id="buttonList">
-        </div>
-        
-        <ul>
-            <li><a href="foxbookHompage.html">Home</a></li>
-            <li><a href="viewCourses.html">View courses</a></li>
-            <li><a href="viewBooks.html">View Books</a></li>
-
-        </ul>
-    </nav>
-</header>
 <body>
-  
-    <nav class="crumbs">
-        <ol>
-            <li class="crumb"><a href="foxbookHompage.html">HomePage</a></li>
-            <li class="crumb"><a href="viewBooks.html">View Books</a></li>
-            <li class="crumb">Order Book</li>
-        </ol>
-    </nav>
+<div class="main">
+    <div class="sidenav">
+        <a href="homepage.html">Home</a>
+        <a href="viewCourses.html">View courses</a>
+        <a href="viewBooks.html">View Books</a>
+                <h1><a href="homepage.html"><img src="logo.png" alt="Logo" id="pic"></a></h1>
+
+    </div>
     <h2>Order a Book:</h2> 
+    
+    <div id = "form" class = "floatCenter">  
 
-<div id = "form" class = "floatCenter">  
-
-    <br> Enter Title:  <input type="text" id = "title">
-    <br><br> Enter Course ID:  <input type="courseID" id = "password" >
-    <br><br><label for="buy">Purchase Type:</label>
-    <select id="buy" name="buy">
-    <option value="Buy New">Buy New</option>
-    <option value="Buy Used">Buy Used</option>
-    <option value="Rent New">Rent New</option>
-    <option value="Rent Used">Rent Used</option>
-    </select>
+        <br> Enter Title:  <input type="text" id = "title">
+        <br><br> Enter Course ID:  <input type="courseID" id = "courseID" placeholder = "try CMPT307L">
+        <br><br><label for="buy">Purchase Type:</label>
+        <select id="buy" name="buy">
+        <option value="Buy New">Buy New</option>
+        <option value="Buy Used">Buy Used</option>
+        <option value="Rent New">Rent New</option>
+        <option value="Rent Used">Rent Used</option>
+        </select>
 
 
-    <p id = "userMessage"> </p>
-    <p style="text-align: center;"> <button onclick="check()"> Submit </button></p>
-
-</div>
+        <p id = "userMessage"> </p>
+        <button onclick="check()" > Submit </button>
+    
+    </div>
   
 </body>
-
-
+<footer  style="font-size: x-small;">
+    <hr>
+    (c) J. Shrestha - 05/09/2023
+</footer>
+</div>
 <script>
     function check() {
-    var title = document.getElementById ("title");
     var courseID = document.getElementById ("courseID");
 
-    if (courseID == "CMPT307L") {
+    if (courseID = "CMPT307L") {
       alert ("Book is out of stock!");
     }
     else {

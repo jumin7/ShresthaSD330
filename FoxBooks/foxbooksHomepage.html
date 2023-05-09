@@ -9,13 +9,28 @@
 body {
   font-family: "Lato", sans-serif;
 }
-#bg {
-    padding: 2%;
+#lib {
+    padding: 4%;
+    padding-left: 6%;
     margin: 0px auto;  
-    display: block;
+    display: inline;
     width: 400px;
-        }
+    text-align: center;
+   
+    }
+#marist {
+    padding: 4%;
+    margin: 0px auto;  
+    display: inline;
+    width: 420px;
+    height: 300px;;
+    text-align: center;
+    
+    }
+#imagebanner{
+    background-color: rgb(203, 221, 242);
 
+}
 p {
     border: solid;
     border-style: dotted;
@@ -24,18 +39,6 @@ p {
     display: block;
     width: 500px;
     font-size: medium;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 
@@ -54,13 +57,9 @@ p {
     <div class ="main">
         <h2>Wecome to FoxBooks!</h2> 
 
-        <div class="row">
-            <div class="column">
-                <img src="library.webp" alt="Fox Logo" id="bg"></a>
-            </div>
-            <div class="column">
-            <img src="maristpic.jpeg" alt="Marist picture" id="bg"></a>
-            </div>
+        <div id="imagebanner">
+            <img src="library.webp" alt="Fox Logo" id="lib"></a>
+            <img src="maristpic.jpeg" alt="Marist picture" id="marist"></a>
         </div>
         <br>
         <p class="center">

@@ -25,6 +25,18 @@ p {
     width: 500px;
     font-size: medium;
 }
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 
 </style>
@@ -41,7 +53,15 @@ p {
 
     <div class ="main">
         <h2>Wecome to FoxBooks!</h2> 
-        <img src="library.webp" alt="Fox Logo" id="bg"></a>
+
+        <div class="row">
+            <div class="column">
+                <img src="library.webp" alt="Fox Logo" id="bg"></a>
+            </div>
+            <div class="column">
+            <img src="maristpic.jpeg" alt="Marist picture" id="bg"></a>
+            </div>
+        </div>
         <br>
         <p class="center">
             FoxBooks is the one stop shop for all of your semester needs. 
